@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background: #191919;
+  color: #fff;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    
+    /* Yahan apni image ka link ya file name lagayein */
+    background-image: linear-gradient(rgba(124, 121, 69, 0.884), rgba(25, 25, 25, 0.85)), 
+                      url('http://googleusercontent.com/image_collection/image_retrieval/11439466638964217525_0');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Animation add karne ke liye */
+    animation: gradientBG 20s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Header & Container */
+.header-wrapper { 
+    width: 100%; 
+}
+
+.container-wrap { 
+    max-width: 1320px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+/* Title/Name Styling (Bada size) */
+.text-static {
+    font-size: 85px; 
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Responsive (Mobile ke liye font adjust karna zaroori hai) */
+@media (max-width: 768px) {
+    .text-static {
+        font-size: 50px;
+    }
+}
+/* Navbar Style */
+.navbar { padding: 70px 0; display: flex; justify-content: space-between; align-items: center; position: relative; }
+.navbar .logo a { color: #fff; font-size: 95px; font-weight: 700; text-decoration: none; }
+.navbar .logo a span { color: #ff4a6e; }
+.navbar .nav-menu { display: flex; align-items: center; gap: 40px; }
+.navbar .menu-items { display: flex; list-style: none; }
+.navbar .menu-items li { margin: 0 25px; }
+.navbar .menu-items li a { color: #fff; padding: 20px 0; text-decoration: none; font-size: 20px; font-weight: 500; text-transform: capitalize; transition: color 0.3s ease; display: inline-block; position: relative; letter-spacing: 1px; }
+.navbar .menu-items li a:after { position: absolute; content: ""; left: 0; width: 0; height: 3px; background: #f9004d; transition: .3s; bottom: 0; }
+.navbar .menu-items li.is-current a:after { width: 100%; }
+.navbar .menu-items li.is-current a, .navbar .menu-items li a:hover { color: #ff4a6e; }
+
+/* Button Styles */
+.btn-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+.btn-wrap a { padding: 10px 25px; color: #fff; background: transparent; font-size: 18px; font-weight: 400; text-transform: capitalize; border-radius: 5px; text-decoration: none; transition: all 0.3s ease; border: 2px solid #ff4a6e; letter-spacing: 2px; }
+.btn-wrap a:hover { background: #ff4a6e; transform: translateY(-2px); border: 2px solid #f9004d; }
+.navbar .toggleicon { display: none; }
+
+/* Hero Wrapper */
+.hero-wrapper { display: flex; justify-content: center; align-items: center; padding: 70px 0; }
+.left-content { flex: 1; padding-right: 20px; display: flex; flex-direction: column; gap: 20px; }
+.left-content .welcome-title { color: #c6c9d8bf; font-size: 15px; text-transform: uppercase; letter-spacing: 4px; display: block; }
+.left-content .text-static { font-size: 54px; line-height: 54px; font-weight: 700; }
+.left-content .txts-typing { height: 70px; line-height: 70px; overflow: hidden; }
+.left-content .txts-typing li { list-style: none; color: #ff4a6e; font-size: 60px; font-weight: 700; position: relative; top: 0; animation: slide 12s steps(4) infinite; }
+@keyframes slide { 100% { top: -280px; } }
+.left-content .txts-typing li span { position: relative; margin: 15px 0; font-size: 54px; line-height: 54px; text-wrap: nowrap; }
+.left-content .txts-typing li span::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 100%; background: #191919; border-left: 2px solid #ff4a6e; animation: typing 3s steps(10) infinite; }
+@keyframes typing { 40%, 60% { left: calc(100% + 10px); } 100% { left: 0; } }
+.para { color: #c6c9d8bf; font-size: 18px; font-weight: 300; margin-bottom: 15px; }
+
+/* Section Spacing for your Content */
+#about, #skills, #contact { padding: 80px 0; }
+section h2 { color: #fff; font-size: 40px; margin-bottom: 20px; }
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar .nav-menu { position: fixed; width: 75vw; height: 100vh; background-color: #1e2228; top: 0; bottom: 0; left: -250%; transition: all .6s; overflow-y: scroll; flex-direction: column; z-index: 99; }
+  .navbar .nav-menu.active { left: 0; transition: all 0.6s; }
+  .navbar .menu-items { flex-direction: column; width: 100%; margin: 0; gap: 15px; }
+  .navbar .toggleicon { display: flex; text-decoration: none; background-color: #f9004d; color: #ffffff; font-size: 30px; cursor: pointer; z-index: 20; padding: 4px; border-radius: 5px; }
+  .hero-wrapper { flex-direction: column; }
+  .left-content { align-items: center; text-align: center; margin-bottom: 50px; }
+}
+
+@media(max-width:476px) {
+  .left-content .text-static { font-size: 40px; line-height: 40px; }
+  .left-content .txts-typing li span { font-size: 40px; line-height: 40px; }
+}
+.hero-image-box img {
+    width: 400px; 
+    border-radius: 100px;
+    border: 3px solid #ff4a6e;
+    
+    transition: 0.3s;
+}
+.hero-image-box img:hover { transform: rotate(0); }
+.card {
+    background: #1e2228;
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 5px solid #ff4a6e;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+    color: #ff4a6e;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: #c6c9d8;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
